@@ -1,0 +1,36 @@
+/* Set the page background to the webcam feed */
+main.v-main > div.v-main__wrap > div.container 
+/* Experimental!! - Seeing if this will only set the  bg image if there's something printing. 
+:has(div[id=card-content] > div.v-tabs-items > div.v-window__container > div.v-window-item:nth-of-type(1):is(.v-window-item--active))
+*/
+{
+  background-image: url(http://192.168.0.96:8080/?action=stream);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/**
+ * Look for any of the panels based on some specific 
+ * known classes, and set the non-hover background 
+ * color to 20% opaque with a dark color with a
+ * fancy transition thingy.
+ * 
+ * This should bring panel opacity back to 0 with 
+ * the correct theme color when you hover over it.
+ */
+div:where(
+  .v-data-table, 
+  .v-tabs-items, 
+  .v-card, 
+  .v-expansion-panel):not(:hover) 
+{
+  background-color: rgb(0 0 0 / 20%) !important;
+  transition: background-color 0.5s ;
+  transition-timing-function: cubic-bezier(.29, 1.01, 1, -0.68);
+}
+
+
+.console-wrapper[data-v-eb66d612] {
+  font-size: small;
+}
