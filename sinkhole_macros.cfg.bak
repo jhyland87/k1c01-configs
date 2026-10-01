@@ -1,0 +1,25 @@
+# No-op macros to silence "Unknown command" spam from Creality's stock
+# software (CFS / AI features not present on this printer).
+# If a firmware update adds real versions of these, Klipper will refuse
+# to start with a "command already registered" error. Remove the matching
+# macro (or the include) if that happens.
+
+[gcode_macro BOX_SET_PRE_LOADING]
+description: No-op (Creality CFS sinkhole)
+gcode:
+  {# ignored #}
+
+[gcode_macro BOX_ENABLE_AUTO_REFILL]
+description: No-op (Creality CFS sinkhole)
+gcode:
+  {# ignored #}
+
+[gcode_macro FILAMENT_RACK_MODIFY]
+description: No-op (Creality sinkhole)
+gcode:
+  {# ignored #}
+
+[gcode_macro LOAD_AI_SET_AI_CONTROL_PREFER]
+description: No-op (Creality AI sinkhole)
+gcode:
+  {# ignored #}
